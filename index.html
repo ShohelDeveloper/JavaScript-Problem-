@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+   body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   }
+   .result,.sample{
+      font-size: 20px;
+      font-weight: 500;
+   }
+</style>
+</head>
+<body>
+<h1>Function parameters and arguments</h1>
+<div class="sample"></div>
+<div style="color: green;" class="result"></div>
+<button class="Btn">CLICK HERE</button>
+<h3>
+Click on the above button to pass the above values as arguments to the function.
+</h3>
+<script>
+   let sampleEle = document.querySelector('.sample');
+   let resEle = document.querySelector(".result");
+   let arr = [22,33,44,55];
+   sampleEle.innerHTML = arr;
+   function add(ARR){
+      let sum = 0;
+      ARR.forEach(element => {
+         sum+=element;
+      });
+      return sum;
+   }
+   document.querySelector(".Btn").addEventListener("click", () => {
+      resEle.innerHTML = 'After addition = ' + add(arr);
+   });
+</script>
+</body>
+</html>
